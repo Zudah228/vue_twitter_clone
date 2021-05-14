@@ -1,4 +1,14 @@
+import Vue from 'vue'
 import colors from 'vuetify/es5/util/colors'
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(fas, far, fab)
+Vue.component('FontAwesomeIcon', FontAwesomeIcon)
+config.autoAddCss = false
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -42,15 +52,6 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
-
-  fontawesome: {
-    imports: [
-      {
-        set: '@fortawesome/free-solid-svg-icons',
-        icons: ['fas'],
-      },
-    ],
-  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

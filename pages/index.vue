@@ -28,9 +28,8 @@
             @click="id = tab.id"
           >
             <font-awesome-icon
-              :prefix="`${tab.iconPrefix}`"
-              :icon="[`${tab.iconName}`]"
-              class="text-2xl mr-4 text-left"
+              :icon="[`${tab.iconPrefix}`, `${tab.iconName}`]"
+              class="mr-4 text-left"
             />
             <p class="text-lg font-semibold text-left hidden xl:block">
               {{ tab.title }}
@@ -39,7 +38,7 @@
         </div>
         <button
           class="
-            text-white
+            text-lightest
             bg-blue
             rounded-full
             font-semibold
@@ -53,7 +52,7 @@
           "
         >
           <p class="hidden xl:block">ツイートする</p>
-          <font-awesome-icon prefix="fas" icon="plus" class="xl:hidden" />
+          <font-awesome-icon :icon="['fas', 'plus']" class="xl:hidden" />
         </button>
       </div>
       <div class="xl:w-full relative">
@@ -72,7 +71,7 @@
         >
           <img
             src="profile.png"
-            class="w-10 h-10 rounded-full flex border border-lighter"
+            class="w-12 h-12 rounded-full border border-lighter"
           />
           <div class="ml-4">
             <p
@@ -93,9 +92,8 @@
             </p>
           </div>
           <font-awesome-icon
-            prefix="fas"
-            icon="angle-down"
-            class="hidden xl:block ml-auto text-lg"
+            :icon="['fas', 'angle-down']"
+            class="hidden xl:block ml-auto"
           />
         </button>
         <div
@@ -124,7 +122,7 @@
           >
             <img
               src="profile.png"
-              class="w-10 h-10 rounded-full flex border border-lighter"
+              class="w-12 h-12 rounded-full border border-lighter"
             />
             <div class="ml-4">
               <p class="text-sm font-bold leading-tight text-left">づだ</p>
@@ -203,8 +201,8 @@
         type="text"
       />
       <font-awesome-icon
-        prefix="fas"
-        icon="search"
+        :icon="['fas', 'search']"
+        font-size="sm"
         class="absolute left-0 top-0 mt-5 ml-12 text-sm text-light"
       />
     </div>
@@ -218,7 +216,7 @@ export default {
   data() {
     return {
       tabs: [
-        { iconPrefix: 'fas', iconName: 'fa-home', title: 'ホーム', id: 'home' },
+        { iconPrefix: 'fas', iconName: 'home', title: 'ホーム', id: 'home' },
         {
           iconPrefix: 'fas',
           iconName: 'hashtag',
@@ -262,6 +260,7 @@ export default {
           id: 'more',
         },
       ],
+      id: 'home',
       dropdown: false,
     }
   },
