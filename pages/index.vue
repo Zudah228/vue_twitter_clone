@@ -29,7 +29,7 @@
           >
             <font-awesome-icon
               :prefix="`${tab.iconPrefix}`"
-              :icon="`${tab.iconName}`"
+              :icon="[`${tab.iconName}`]"
               class="text-2xl mr-4 text-left"
             />
             <p class="text-lg font-semibold text-left hidden xl:block">
@@ -218,7 +218,7 @@ export default {
   data() {
     return {
       tabs: [
-        { iconPrefix: 'fas', iconName: 'home', title: 'ホーム', id: 'home' },
+        { iconPrefix: 'fas', iconName: 'fa-home', title: 'ホーム', id: 'home' },
         {
           iconPrefix: 'fas',
           iconName: 'hashtag',
